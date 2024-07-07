@@ -1,0 +1,5 @@
+.no-border:focus {
+  border: none;
+  outline: none;
+  color: white;
+}
