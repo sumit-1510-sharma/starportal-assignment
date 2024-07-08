@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <div className="flex flex-col text-white mx-1 mr-12 space-y-16 pt-8 pb-12">
       {/* Intract logo */}
-      <div className="flex flex-wrap items-start justify-between space-x-4 space-y-3">
+      <div className="flex flex-wrap items-start justify-between space-x-4 space-y-5">
         <div className="w-40 p-4 space-y-4">
           <img className="cursor-pointer" src={logo} alt="" />
           <p className="opacity-55">

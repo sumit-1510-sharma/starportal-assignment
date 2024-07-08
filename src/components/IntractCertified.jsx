@@ -1,14 +1,13 @@
 import React from "react";
-import cat_image from "../assets/intractcertified_1.png";
 import { BiCheck, BiCheckCircle, BiLock } from "react-icons/bi";
 
-const IntractCertified = () => {
+const IntractCertified = ({img}) => {
   return (
     <div className="text-white flex items-start justify-center flex-col">
       <div className="cursor-pointer hover:scale-110 ease-in-out transform transition duration-200 relative w-32 lg:w-44 p-1.5 border border-opacity-10 rounded-3xl">
         <img
           className="rounded-2xl w-full object-cover"
-          src={cat_image}
+          src={img}
           alt=""
         />
         <div className="absolute -right-3 -bottom-3 border rounded-full p-3 bg-gray-900 opacity-90">

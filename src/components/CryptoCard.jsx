@@ -1,10 +1,47 @@
 import React from "react";
-import crypto_1 from "../assets/cryptocard_1.png";
+
 import coin from "../assets/coin.svg";
 import CryptoCardHidden from "./helpers/CryptoCardHidden";
 import IntractCertified from "./IntractCertified";
+import intract_1 from "../assets/intractcertified_1.png";
+import intract_2 from "../assets/intractcertified_2.png";
+import image_1 from "../assets/cryptocardhidden_1.jpg";
+import image_2 from "../assets/cryptocardhidden_2.jpg";
+import image_3 from "../assets/cryptocardhidden_3.jpg";
+import image_4 from "../assets/cryptocardhidden_4.jpg";
+import image_5 from "../assets/cryptocardhidden_5.jpg";
+import image_6 from "../assets/cryptocardhidden_6.jpg";
 
-const CryptoCard = ({ leftToRight }) => {
+const cardList = [
+  {
+    imageUrl: image_1,
+    title: "#1: But what is crypto ?",
+  },
+  {
+    imageUrl: image_2,
+    title: "#2: What is Blockchain?",
+  },
+  {
+    imageUrl: image_3,
+    title: "#3: How to Buy Crypto",
+  },
+  {
+    imageUrl: image_4,
+    title: "#4: Crypto Wallets Explained",
+  },
+  {
+    imageUrl: image_5,
+    title: "#5: Crypto Mining 101",
+  },
+  {
+    imageUrl: image_6,
+    title: "#6: Future of Cryptocurrency",
+  },
+];
+
+const CryptoCard = ({ leftToRight, img }) => {
+  const chosenImage = leftToRight ? intract_1 : intract_2;
+  console.log(cardList[0].title);
   return (
     <div
       className={
@@ -18,7 +55,7 @@ const CryptoCard = ({ leftToRight }) => {
           <div className="w-32 h-28 sm:h-44 sm:w-40 p-2 bg-gray-800 bg-opacity-50 rounded-xl">
             <img
               className="cursor-pointer h-24 sm:h-40 object-cover rounded-xl"
-              src={crypto_1}
+              src={img}
               alt=""
             />
           </div>
@@ -38,13 +75,17 @@ const CryptoCard = ({ leftToRight }) => {
         </div>
         {/* hidden part */}
         <div className="h-[60vh] bg-gray-700 bg-opacity-50 overflow-y-scroll rounded-b-3xl">
-          {[1, 1, 1, 1, 1, 1].map((item, index) => (
-            <CryptoCardHidden key={index} />
+          {cardList.map((item, index) => (
+            <CryptoCardHidden
+              img={cardList[index].imageUrl}
+              key={index}
+              title={cardList[index].title}
+            />
           ))}
         </div>
       </div>
       <div className="hidden lg:flex">
-        <IntractCertified />
+        <IntractCertified img={chosenImage} />
       </div>
     </div>
   );

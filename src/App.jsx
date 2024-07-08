@@ -6,6 +6,9 @@ import Hero from "./components/Hero";
 import IntractCertified from "./components/IntractCertified";
 import Navbar from "./components/Navbar";
 import TopCreators from "./components/TopCreators";
+import crypto_1 from "../src/assets/cryptocard_1.png";
+import crypto_2 from "../src/assets/cryptocard_2.png";
+import intract_1 from "../src/assets/intractcertified_1.png";
 
 function App() {
   return (
@@ -13,11 +16,11 @@ function App() {
       <Navbar />
       <Hero />
       <div className="opacity-95 bg-black">
-        <CryptoCard leftToRight={true} />
+        <CryptoCard leftToRight={true} img={crypto_1} />
         <div className="lg:hidden flex items-center justify-center mx-4 mt-56 mb-16">
-          <IntractCertified />
+          <IntractCertified img={intract_1} />
         </div>
-        <CryptoCard leftToRight={false} />
+        <CryptoCard leftToRight={false} img={crypto_2} />
         {/* RewardCard */}
         <TopCreators />
         <Dictionary />
